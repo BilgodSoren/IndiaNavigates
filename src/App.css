@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+🧬 Matrix Hacker Theme
+/* @import "leaflet/dist/leaflet.css"; */
+
+
+body {
+  margin: 0;
+  font-family: "Share Tech Mono", monospace;
+  background-color: #000;
+  color: #00ff99;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 0;
+  animation: moveGrid 30s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes moveGrid {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 100% 100%, 100% 100%; }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 50px;
+  padding: 40px;
+  animation: fadeIn 1s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.in, .App2 {
+  background: rgba(0, 30, 0, 0.85);
+  border: 1px solid #00ff99;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 100, 0.3);
+  padding: 20px;
+  width: 380px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 255, 100, 0.2);
+  text-align: left;
+}
+
+th {
+  color: #00ffaa;
+  font-weight: bold;
+}
+
+tr:hover {
+  background: rgba(0, 255, 0, 0.08);
+}
+
+input {
+  width: 90%;
+  background: #001800;
+  color: #00ff99;
+  border: 1px solid #00ff99;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ff99;
+}
+
+button {
+  background: #001800;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00ff99;
+  color: #000;
+  box-shadow: 0 0 10px #00ff99;
+}
+
+.p {
+  font-size: 12px;
+  color: #55ffcc;
 }
